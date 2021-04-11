@@ -3,7 +3,7 @@ import headerImage from '../../../images/headerImage.png';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-const AppointmentHeader = ({handleDateChange}) => {
+const AppointmentHeader = ({ handleDateChange }) => {
 
     return (
         <main style={{ height: '600px' }} className="row d-flex align-items-center">
