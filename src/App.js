@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home/Home";
 import Appointment from "./Components/Appointment/Appointment/Appointment";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import AddDoctor from "./Components/AddDoctor/AddDoctor";
+import Login from "./Components/Login/Login/Login";
 
 function App() {
     return (
@@ -24,6 +25,9 @@ function App() {
                 </Route>
                 <Route path="/dashboard/addDoctor">
                     <AddDoctor></AddDoctor>
+                </Route>
+                <Route path="/login">
+                    <Login></Login>
                 </Route>
             </Switch>
         </Router>
