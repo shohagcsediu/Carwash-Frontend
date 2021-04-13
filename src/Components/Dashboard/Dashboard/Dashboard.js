@@ -34,7 +34,7 @@ const Dashboard = () => {
                 <div className="col-md-2">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5 d-flex justify-content-center">
                     <Calendar
                         onChange={handleDateChange}
                         value={new Date()}
