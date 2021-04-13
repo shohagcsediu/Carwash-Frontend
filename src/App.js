@@ -1,13 +1,10 @@
 import React from "react";
 import './App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import Appointment from "./Components/Appointment/Appointment/Appointment";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import AddDoctor from "./Components/AddDoctor/AddDoctor";
 
 function App() {
     return (
@@ -16,11 +13,17 @@ function App() {
                 <Route exact path="/">
                     <Home></Home>
                 </Route>
+                <Route exact path="/home">
+                    <Home></Home>
+                </Route>
                 <Route path="/appointment">
                     <Appointment></Appointment>
                 </Route>
                 <Route path="/dashboard/appointment">
                     <Dashboard></Dashboard>
+                </Route>
+                <Route path="/dashboard/addDoctor">
+                    <AddDoctor></AddDoctor>
                 </Route>
             </Switch>
         </Router>
