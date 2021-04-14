@@ -10,6 +10,10 @@ const Login = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
+
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }
@@ -22,13 +26,27 @@ const Login = () => {
             .signInWithPopup(googleProvider)
             .then((result) => {
                 const { displayName, email } = result.user;
-                const signedInUser = { displayName, email }
+                const signedInUser = { name: displayName, email }
                 console.log(signedInUser);
                 setLoggedInUser(signedInUser);
+                storeAuthToken();
+                // history.replace(from);
             })
             .catch((error) => {
-                var errorMessage = error.message;
+                const errorMessage = error.message;
                 console.log(errorMessage);
+            });
+    }
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function (idToken) {
+                // console.log(idToken)
+                sessionStorage.setItem('token', idToken);
+                history.replace(from);
+            })
+            .catch(function (error) {
+                // Handle error
             });
     }
 
