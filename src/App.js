@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import Appointment from "./Components/Appointment/Appointment/Appointment";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
-import AddDoctor from "./Components/AddDoctor/AddDoctor";
+import AddDoctor from "./Components/Dashboard/AddDoctor/AddDoctor";
 import Login from "./Components/Login/Login/Login";
 
 export const UserContext = createContext();
