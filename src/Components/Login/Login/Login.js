@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../../config/firebase.config';
 import LoginBg from '../../../images/loginBg.png';
+import { UserContext } from '../../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
+    }
+
+    const handleGoogleSignIn = () => {
+
+        var googleProvider = new firebase.auth.GoogleAuthProvider();
+
+        firebase.auth()
+            .signInWithPopup(googleProvider)
+            .then((result) => {
+                const { displayName, email } = result.user;
+                const signedInUser = { displayName, email }
+                console.log(signedInUser);
+                setLoggedInUser(signedInUser);
+            })
+            .catch((error) => {
+                var errorMessage = error.message;
+                console.log(errorMessage);
+            });
     }
 
     return (
@@ -26,7 +48,7 @@ const Login = () => {
                         <label htmlFor="" className="text-danger">Forgot your password?</label>
                     </div>
                     <div className="from-group mt-5">
-                        <button className="btn btn-brand" >Google Sign in</button>
+                        <button className="btn btn-brand" onClick={handleGoogleSignIn} >Google Sign in</button>
                     </div>
                 </div>
                 <div className="col-md-6 d-none d-md-block align-self-end">

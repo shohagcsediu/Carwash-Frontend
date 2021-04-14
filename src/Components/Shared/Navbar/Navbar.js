@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
+
         <nav className="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a className="navbar-brand" href="#">Doctors Portal</a>
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/">Doctors Portal</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -26,9 +31,14 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="/dashboard/appointment" className="nav-link me-5 text-info" as={Link}>Dashboard</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link to="/login" className="nav-link me-5 text-info" as={Link}>Log In</Link>
-                        </li>
+                        {loggedInUser.email ?
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link me-5 text-info" as={Link}> {loggedInUser.name} </Link>
+                            </li> :
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link me-5 text-info" as={Link}>Log In</Link>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
