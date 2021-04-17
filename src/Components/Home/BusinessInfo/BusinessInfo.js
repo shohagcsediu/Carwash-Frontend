@@ -7,19 +7,19 @@ const infoData = [
         title: 'Opening Hours',
         description: 'we are open 7 days',
         icon: faClock,
-        background: 'primary'
-    },
-    {
-        title: 'Visit Our Location',
-        description: 'Dhaka, Bangladesh',
-        icon: faMapMarker,
         background: 'dark'
     },
     {
-        title: 'Call us now',
-        description: '01784000001',
-        icon: faPhone,
+        title: 'Visit Our Location',
+        description: 'Uttara, Dhaka',
+        icon: faMapMarker,
         background: 'primary'
+    },
+    {
+        title: 'Call us now',
+        description: '01912345678',
+        icon: faPhone,
+        background: 'dark'
     }
 ]
 

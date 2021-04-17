@@ -10,32 +10,29 @@ const Sidebar = () => {
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh", left:"0"}}>
             <ul className="list-unstyled">
                 <li>
-                    <Link to="/doctor/dashboard" className="text-white text-decoration-none">
+                    <Link to="/dashboard" className="text-white text-decoration-none">
                         <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span> 
                     </Link>
                 </li>
+
                 <li>
-                    <Link to="/dashboard/appointment" className="text-white text-decoration-none">
-                        <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span> 
+                    <Link to="/dashboard/addService" className="text-white text-decoration-none">
+                        <FontAwesomeIcon icon={faFileAlt} /> <span>Add Service</span>
+                    </Link>
+                </li>
+               
+                <li>
+                    <Link to="/dashboard/addWashman" className="text-white text-decoration-none">
+                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Washman</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/doctor/patients" className="text-white text-decoration-none">
-                        <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
+                    <Link to="/dashboard/addTestimonial" className="text-white text-decoration-none">
+                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Review</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/doctor/prescriptions" className="text-white text-decoration-none">
-                        <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/dashboard/addDoctor" className="text-white text-decoration-none">
-                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/doctor/setting" className="text-white text-decoration-none">
+                    <Link to="/dashboard/settings" className="text-white text-decoration-none">
                       <FontAwesomeIcon icon={faCog} /> <span>Setting</span>
                     </Link>
                 </li>

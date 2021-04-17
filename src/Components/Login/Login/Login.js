@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from '../../../config/firebase.config';
+import firebaseConfig from '../../../Components/config/firebaseConfig';
 import LoginBg from '../../../images/loginBg.png';
 import { UserContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router-dom';

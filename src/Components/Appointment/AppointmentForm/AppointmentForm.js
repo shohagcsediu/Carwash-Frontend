@@ -25,7 +25,7 @@ const AppointmentForm = ({ modalIsOpen, appointmentOn, date, closeModal }) => {
         data.date = date;
         data.created = new Date();
 
-        fetch('http://localhost:5000/addAppointment', {
+        fetch('https://sheltered-savannah-58982.herokuapp.com/addAppointment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -78,11 +78,11 @@ const AppointmentForm = ({ modalIsOpen, appointmentOn, date, closeModal }) => {
 
                         </div>
                         <div className="col-4">
-                            <input ref={register({ required: true })} className="form-control" name="age" placeholder="Your Age" type="number" />
+                            <input ref={register({ required: true })} className="form-control" name="age" placeholder="Car Age" type="number" />
                             {errors.age && <span className="text-danger">This field is required</span>}
                         </div>
                         <div className="col-4">
-                            <input ref={register({ required: true })} className="form-control" name="weight" placeholder="Weight" type="number" />
+                            <input ref={register({ required: true })} className="form-control" name="weight" placeholder="Car Weight" type="number" />
                             {errors.weight && <span className="text-danger">This field is required</span>}
                         </div>
                     </div>

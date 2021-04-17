@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
-const AddDoctor = () => {
+const AddService = () => {
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -22,35 +22,42 @@ const AddDoctor = () => {
         const formData = new FormData()
         formData.append('file', file);
         formData.append('name', info.name);
-        formData.append('email', info.email);
+        formData.append('details', info.details);
+        formData.append('price', info.price);
 
-        fetch('https://sheltered-savannah-58982.herokuapp.com/addDoctor', {
+        fetch('https://sheltered-savannah-58982.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                alert('You added new service');
             })
             .catch(error => {
                 console.error(error)
             })
+                 
     }
 
     return (
         <section className="container-fluid row">
             <Sidebar></Sidebar>
             <div className="col-md-10 p-4 pr-5" style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
-                <h5 className="text-brand">Add a Doctor</h5>
+                <h5 className="text-brand">Add New Service</h5>
                 <form onSubmit={handleSubmit}>
                     <div class="form-group mb-3">
-                        <label for="exampleInputName" class="form-label">Doctor Name</label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name="name" placeholder="Enter Name" />
+                        <label for="exampleInputName" class="form-label">Service Name</label>
+                        <input onBlur={handleBlur} type="text" class="form-control" name="name" placeholder="Enter Title" />
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                        <input onBlur={handleBlur} type="email" class="form-control" name="email" placeholder="Enter Email" />
+                        <label for="exampleInputName" class="form-label">Service Details</label>
+                        <input onBlur={handleBlur} type="text" class="form-control" name="details" placeholder="Enter Details" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="exampleInputName" class="form-label">Service Price</label>
+                        <input onBlur={handleBlur} type="text" class="form-control" name="price" placeholder="Enter Price" />
                     </div>
 
                     <div class="form-group mb-3">
@@ -64,4 +71,4 @@ const AddDoctor = () => {
     );
 };
 
-export default AddDoctor;
+export default AddService;

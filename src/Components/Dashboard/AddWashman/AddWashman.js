@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
-const AddDoctor = () => {
+const AddWashman = () => {
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -24,27 +24,28 @@ const AddDoctor = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('https://sheltered-savannah-58982.herokuapp.com/addDoctor', {
+        fetch('https://sheltered-savannah-58982.herokuapp.com/addWashman', {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                alert('You added another washman');
             })
             .catch(error => {
                 console.error(error)
             })
+                 
     }
 
     return (
         <section className="container-fluid row">
             <Sidebar></Sidebar>
             <div className="col-md-10 p-4 pr-5" style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
-                <h5 className="text-brand">Add a Doctor</h5>
+                <h5 className="text-brand">Add a Washman</h5>
                 <form onSubmit={handleSubmit}>
                     <div class="form-group mb-3">
-                        <label for="exampleInputName" class="form-label">Doctor Name</label>
+                        <label for="exampleInputName" class="form-label">Washman Name</label>
                         <input onBlur={handleBlur} type="text" class="form-control" name="name" placeholder="Enter Name" />
                     </div>
 
@@ -64,4 +65,4 @@ const AddDoctor = () => {
     );
 };
 
-export default AddDoctor;
+export default AddWashman;
