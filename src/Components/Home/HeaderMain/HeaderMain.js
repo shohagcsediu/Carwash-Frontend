@@ -12,7 +12,7 @@ const HeaderMain = () => {
               
             </div>
             <div className="col-md-6">
-                <img src={headerImage} alt="" className="img-fluid" />
+                <img src={headerImage} alt="" style={{ height: '250px'}} />
             </div>
         </main>
     );

@@ -8,8 +8,10 @@ serviceimage:hover{
 .img-fluid {
     max-width: 100%;
     height: 150px;
+    transition: width 2s, height 2s, transform 2s;
 }
 
 .img-fluid:hover{
-    transform: scale(1.5);
+  height: 200px;
+  transform: rotate(90deg);
 }
