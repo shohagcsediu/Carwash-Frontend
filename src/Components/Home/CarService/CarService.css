@@ -1,0 +1,15 @@
+serviceimage{
+    height: 100px;
+}
+serviceimage:hover{
+    height: 500px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 150px;
+}
+
+.img-fluid:hover{
+    transform: scale(1.5);
+}

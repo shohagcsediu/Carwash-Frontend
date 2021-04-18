@@ -15,8 +15,8 @@ const ReviewDetails = () => {
         <section className="review">
             <div className="container">
             <div className="text-center">
-            <h5 className="text-primary">clients said</h5>
-                <h2>Testimonials</h2>
+            <h5 style={{ color: '#1CC7C1' }}>Testimonials</h5>
+                <h2>Our Clients said </h2>
             </div>
                 <div className="row">
                     {
